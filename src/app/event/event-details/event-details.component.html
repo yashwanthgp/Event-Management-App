@@ -1,0 +1,43 @@
+<app-nav-bar></app-nav-bar>
+  <div class="container">
+    <div class="row text-center py-3">
+        <h1>Event Details</h1>
+    </div>
+    <diV class="row">
+        <div class="col-lg-2 col-md-1"></div>
+        <div  *ngIf="event" class="col-lg-8 col-md-10">
+            <div class="row">
+                <mat-card appearance="outlined" style="background-color: #3f51b5;" class="p-4 ">
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Title:</span><span class="event-info">{{event.eventTitle}}</span>
+                    </div>
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Description:</span><span class="event-info">{{event.eventDescription}} </span>
+                    </div>
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Date:</span><span class="event-info">{{event.eventDate | date: 'medium'}} </span>
+                    </div>
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Location:</span><span class="event-info">{{event.eventLocation}} </span>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <button mat-flat-button style="background-color:deepskyblue;color: white;" (click)="editEvent()">
+                                Edit Event
+                            </button>
+                        </div>
+                        <div class="col-md-4 " >
+                            <button mat-flat-button style="background-color: red;color: white;" (click)="deleteEvent()">
+                                Delete Event
+                            </button>
+                        </div>
+                      </div>
+                </mat-card>
+            </div>
+            
+          </div>
+          <div class="col-lg-2 col-md-1"></div>
+      </diV>
+      
+  </div>
+  

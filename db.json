@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "f0db",
+      "userName": "yashwanthgp",
+      "email": "yash@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "3a8e",
+      "userName": "shreysacs",
+      "email": "shreyas@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "f1b4",
+      "userName": "test1",
+      "email": "test@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "1223",
+      "userName": "yashwanthgp",
+      "email": "yas@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "eventList": [
+    {
+      "eventTitle": "interview",
+      "eventDescription": "Angular developer interview",
+      "eventDate": "2025-03-12T18:30:00.000Z",
+      "eventLocation": "banglore",
+      "userId": "f0db",
+      "id": "c850"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+  <div class="container">
+    <!-- <div class="row text-center py-3">
+        <h1>Event List</h1>
+    </div> -->
+    <div class="row my-3">
+        <div class="col-md-6">
+            <button mat-flat-button style="background-color:deepskyblue;color: white;" (click)="createNewEvent()">
+                Create New Event
+            </button>
+        </div>
+    </div>
+    <div *ngIf="eventList.length > 0">
+        <diV class="row">
+            <div  *ngFor="let event of eventList" class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <mat-card appearance="outlined" style="background-color: #3f51b5;" class="p-4 mb-3">
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Title:</span><span class="event-info">{{event.eventTitle}}</span>
+                    </div>
+                    <div class="row" style="display: inline;">
+                        <span class="event-info">Event Date:</span><span class="event-info">{{event.eventDate | date: 'medium'}} </span>
+                    </div>
+                    <a class="event-info" [routerLink] = "['/event-details', event.id]">view more details</a>
+                </mat-card>
+              </div>
+          </diV>
+    </div>
+    <div *ngIf="eventList.length <= 0">
+        <h6 class="text-center">No Events to Show</h6>
+    </div>
+    
+  </div>
+  
+    
+  
+  

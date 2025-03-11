@@ -1,0 +1,91 @@
+
+<app-nav-bar></app-nav-bar>
+  <mat-card appearance="outlined" class="p-4 form-card">
+    <div class="container">
+        <mat-card-title class="pb-3">{{data? 'Update' : 'Create'}} Event</mat-card-title>
+        <div *ngIf="data">
+            <form [formGroup]="createEventForm" (ngSubmit)="onFormSubmit()">
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Title</mat-label>
+                        <input matInput type="text" placeholder="enter eventTitle" [(ngModel)]="data.eventTitle" formControlName="eventTitle" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Description</mat-label>
+                        <input matInput type="text" placeholder="enter eventDescription" [(ngModel)]="data.eventDescription" formControlName="eventDescription" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Date</mat-label>
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="data.eventDate" formControlName="eventDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>                </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Location</mat-label>
+                        <input matInput type="text" placeholder="enter eventLocation" [(ngModel)]="data.eventLocation" formControlName="eventLocation" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>User Id</mat-label>
+                        <input matInput type="text" placeholder="enter userId" [(ngModel)]="userId" formControlName="userId" readonly="true">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="action text-center">
+                        <button mat-raised-button color="primary" type="submit">{{data? 'Update' : 'Create'}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="!data">
+            <form [formGroup]="createEventForm" (ngSubmit)="onFormSubmit()">
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Title</mat-label>
+                        <input matInput type="text" placeholder="enter eventTitle" formControlName="eventTitle" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Description</mat-label>
+                        <input matInput type="text" placeholder="enter eventDescription" formControlName="eventDescription" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="eventDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>                </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Event Location</mat-label>
+                        <input matInput type="text" placeholder="enter eventLocation" formControlName="eventLocation" >
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>User Id</mat-label>
+                        <input matInput type="text" placeholder="enter userId" [(ngModel)]="userId" formControlName="userId" readonly="true">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="action text-center">
+                        <button mat-raised-button color="primary" type="submit">{{data? 'Update' : 'Create'}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+        
+</mat-card>
